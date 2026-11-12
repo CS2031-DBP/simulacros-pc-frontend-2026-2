@@ -1,0 +1,1 @@
+# simulacros-pc-frontend-2026-2
