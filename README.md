@@ -17,8 +17,7 @@ Puedes iniciar varios servicios en paralelo usando sus nombres. Para detener un 
 
 Como alternativa, instala Java 21, entra en la carpeta `backend/` del caso y ejecuta `./mvnw spring-boot:run` (en Windows, `mvnw.cmd spring-boot:run`). Para restaurar los datos en este modo, detén la aplicación y elimina su carpeta local `data/`. Usa un solo modo de ejecución por caso. Si Vite usa otro origen, configura `FRONTEND_ORIGIN` al iniciar el backend.
 
-![alt text](image-2.png)
-
+<img src="image-2.png" width="350">
 
 
 ## Casos
@@ -32,4 +31,4 @@ Como alternativa, instala Java 21, entra en la carpeta `backend/` del caso y eje
 | `entregas-reciclaje` | 3005 | [Registro de entregas para reciclaje](casos/05-entregas-reciclaje/ENUNCIADO.md) · [API](casos/05-entregas-reciclaje/API.md) |
 | `solicitudes-tutoria` | 3006 | [Actualización de solicitudes de tutoría](casos/06-solicitudes-tutoria/ENUNCIADO.md) · [API](casos/06-solicitudes-tutoria/API.md) |
 
-![alt text](image-1.png)
+<img src="image-1.png" alt="Suerte!" width="350">
