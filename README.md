@@ -1,26 +1,14 @@
 # Simulacros de PC de frontend web · 2026-2
 
-![alt text](image.png)
-
 Hay seis simulacros independientes. Cada uno tiene un enunciado de 14 puntos, un contrato HTTP y su propio backend Spring Boot.
 
 En estos simulacros puedes consultar el código fuente del backend. **En la PC original recibirás un backend ya desplegado y la documentación de sus rutas. La evaluación consiste en implementar el frontend web que consume esa API.**
 
-## Empezar
+<p align="center">
+  <img src="image.png" width="300">
+</p>
 
-1. Instala Docker con Docker Compose.
-2. Desde la raíz ejecuta `docker compose up --build espacios-estudio`.
-3. Comprueba el arranque con `curl -f http://localhost:3001/api/health`.
-4. Abre el enunciado y el contrato del caso. Crea tu proyecto React con Vite en una carpeta separada del backend y ejecútalo en `http://localhost:5173`.
-
-Puedes iniciar varios servicios en paralelo usando sus nombres. Para detener un caso usa `docker compose stop espacios-estudio`. Los datos persisten al detenerlo. Para restaurar solo ese caso ejecuta `bash scripts/restaurar-backend.sh espacios-estudio`. El comando borra sus cambios locales.
-
-Como alternativa, instala Java 21, entra en la carpeta `backend/` del caso y ejecuta `./mvnw spring-boot:run` (en Windows, `mvnw.cmd spring-boot:run`). Para restaurar los datos en este modo, detén la aplicación y elimina su carpeta local `data/`. Usa un solo modo de ejecución por caso. Si Vite usa otro origen, configura `FRONTEND_ORIGIN` al iniciar el backend.
-
-<img src="image-2.png" width="350">
-
-
-## Casos
+## Elige un caso
 
 | Servicio | Puerto | Material |
 |---|---:|---|
@@ -31,4 +19,22 @@ Como alternativa, instala Java 21, entra en la carpeta `backend/` del caso y eje
 | `entregas-reciclaje` | 3005 | [Registro de entregas para reciclaje](casos/05-entregas-reciclaje/ENUNCIADO.md) · [API](casos/05-entregas-reciclaje/API.md) |
 | `solicitudes-tutoria` | 3006 | [Actualización de solicitudes de tutoría](casos/06-solicitudes-tutoria/ENUNCIADO.md) · [API](casos/06-solicitudes-tutoria/API.md) |
 
-<img src="image-1.png" alt="Suerte!" width="350">
+## Empieza con Docker
+
+1. Instala Docker con Docker Compose.
+2. Desde la raíz ejecuta `docker compose up --build espacios-estudio`.
+3. Comprueba el arranque con `curl -f http://localhost:3001/api/health`.
+4. Abre el enunciado y el contrato del caso en la tabla de arriba. Crea tu proyecto React con Vite en una carpeta separada del backend y ejecútalo en `http://localhost:5173`.
+
+## Detén o restaura el backend
+
+Puedes iniciar varios servicios en paralelo usando sus nombres. Para detener un caso usa `docker compose stop espacios-estudio`. Los datos persisten al detenerlo. Para restaurar solo ese caso ejecuta `bash scripts/restaurar-backend.sh espacios-estudio`. El comando borra sus cambios locales.
+
+## Ejecuta con Java 21
+
+Como alternativa, instala Java 21, entra en la carpeta `backend/` del caso y ejecuta `./mvnw spring-boot:run` (en Windows, `mvnw.cmd spring-boot:run`). Para restaurar los datos en este modo, detén la aplicación y elimina su carpeta local `data/`. Usa un solo modo de ejecución por caso. Si Vite usa otro origen, configura `FRONTEND_ORIGIN` al iniciar el backend.
+
+<p align="center">
+  <img src="image-2.png" width="170">
+  <img src="image-1.png" width="170">
+</p>
