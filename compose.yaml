@@ -1,0 +1,57 @@
+name: simulacros-pc-frontend-2026-2
+services:
+  espacios-estudio:
+    build: ./casos/01-espacios-estudio/backend
+    ports:
+      - "127.0.0.1:3001:3001"
+    environment:
+      FRONTEND_ORIGIN: ${FRONTEND_ORIGIN:-http://localhost:5173}
+    volumes:
+      - espacios-estudio:/app/data
+  talleres-culturales:
+    build: ./casos/02-talleres-culturales/backend
+    ports:
+      - "127.0.0.1:3002:3002"
+    environment:
+      FRONTEND_ORIGIN: ${FRONTEND_ORIGIN:-http://localhost:5173}
+    volumes:
+      - talleres-culturales:/app/data
+  mantenimiento-campus:
+    build: ./casos/03-mantenimiento-campus/backend
+    ports:
+      - "127.0.0.1:3003:3003"
+    environment:
+      FRONTEND_ORIGIN: ${FRONTEND_ORIGIN:-http://localhost:5173}
+    volumes:
+      - mantenimiento-campus:/app/data
+  prestamo-juegos:
+    build: ./casos/04-prestamo-juegos/backend
+    ports:
+      - "127.0.0.1:3004:3004"
+    environment:
+      FRONTEND_ORIGIN: ${FRONTEND_ORIGIN:-http://localhost:5173}
+    volumes:
+      - prestamo-juegos:/app/data
+  entregas-reciclaje:
+    build: ./casos/05-entregas-reciclaje/backend
+    ports:
+      - "127.0.0.1:3005:3005"
+    environment:
+      FRONTEND_ORIGIN: ${FRONTEND_ORIGIN:-http://localhost:5173}
+    volumes:
+      - entregas-reciclaje:/app/data
+  solicitudes-tutoria:
+    build: ./casos/06-solicitudes-tutoria/backend
+    ports:
+      - "127.0.0.1:3006:3006"
+    environment:
+      FRONTEND_ORIGIN: ${FRONTEND_ORIGIN:-http://localhost:5173}
+    volumes:
+      - solicitudes-tutoria:/app/data
+volumes:
+  espacios-estudio:
+  talleres-culturales:
+  mantenimiento-campus:
+  prestamo-juegos:
+  entregas-reciclaje:
+  solicitudes-tutoria:
