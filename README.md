@@ -32,7 +32,46 @@ Puedes iniciar varios servicios en paralelo usando sus nombres. Para detener un 
 
 ## Ejecuta con Java 21
 
-Como alternativa, instala Java 21, entra en la carpeta `backend/` del caso y ejecuta `./mvnw spring-boot:run` (en Windows, `mvnw.cmd spring-boot:run`). Para restaurar los datos en este modo, detén la aplicación y elimina su carpeta local `data/`. Usa un solo modo de ejecución por caso. Si Vite usa otro origen, configura `FRONTEND_ORIGIN` al iniciar el backend.
+Puedes levantar el backend con Maven Wrapper desde la terminal. Instala el **JDK 21** según tu sistema.
+
+### Linux (Ubuntu)
+
+```bash
+sudo apt update
+sudo apt install openjdk-21-jdk
+```
+
+Si ya tienes varias versiones de Java, selecciona la 21 con `sudo update-alternatives --config java`. Si `JAVA_HOME` apunta a otra versión, actualízalo para esta terminal.
+
+```bash
+export JAVA_HOME="$(dirname "$(dirname "$(readlink -f "$(command -v java)")")")"
+```
+
+[Paquete OpenJDK 21 para Ubuntu](https://packages.ubuntu.com/en/openjdk-21-jdk)
+
+### macOS (Homebrew)
+
+```bash
+brew install openjdk@21
+export JAVA_HOME="$(brew --prefix openjdk@21)/libexec/openjdk.jdk/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
+```
+
+Los cambios de `JAVA_HOME` y `PATH` se aplican a la terminal actual. [OpenJDK 21 en Homebrew](https://formulae.brew.sh/formula/openjdk@21)
+
+### Inicia el backend
+
+En Linux o macOS, desde la raíz del repo:
+
+```bash
+java -version
+cd casos/01-espacios-estudio/backend
+./mvnw spring-boot:run
+```
+
+Comprueba que `java -version` indique la versión 21. Para otro caso, usa su carpeta `backend/` y el puerto de la tabla. En Windows, con el JDK 21 instalado, ejecuta `mvnw.cmd spring-boot:run` desde la carpeta del backend.
+
+Para restaurar los datos en este modo, detén la aplicación y elimina su carpeta local `data/`. Usa un solo modo de ejecución por caso. Si Vite usa otro origen, configura `FRONTEND_ORIGIN` al iniciar el backend.
 
 <p align="center">
   <img src="image-2.png" width="170">
